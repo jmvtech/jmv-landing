@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f8f8f8;
+  color: #000;
+}
+
+header {
+  background-color: #2C9C92;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+p {
+  margin: 5px 0 0 0;
+}
+
+.services, .partners {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.services h2, .partners h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.services ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.services li {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.partner-logos img {
+  height: 60px;
+  object-fit: contain;
+}
+
+footer {
+  background-color: #2C9C92;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
