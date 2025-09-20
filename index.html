@@ -6,6 +6,7 @@
     <title>JMV Technologies</title>
     <link rel="icon" type="image/x-icon" href="./assets/JMV TECHNOLOGIES ICONE.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -61,10 +62,10 @@
                 <h1 class="text-5xl font-bold mb-6">Nós providenciamos soluções inteligentes!</h1>
                 <p class="text-xl mb-8 text-jmv-light">Transforme sua empresa com nossas soluções completas em TI</p>
                 <div class="space-x-4">
-                    <button class="bg-jmv-accent hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    <button id="btnSolicitarOrcamento" class="bg-jmv-accent hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
                         Solicitar Orçamento
                     </button>
-                    <button class="border-2 border-white text-white hover:bg-white hover:text-jmv-primary px-8 py-3 rounded-lg font-semibold transition-colors">
+                    <button id="btnNossosServicos" class="border-2 border-white text-white hover:bg-white hover:text-jmv-primary px-8 py-3 rounded-lg font-semibold transition-colors">
                         Nossos Serviços
                     </button>
                 </div>
@@ -98,7 +99,7 @@
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold text-jmv-primary mb-4">E-mail Corporativo</h3>
-                    <p class="text-gray-600 mb-6">Soluções profissionais de e-mail com domínio próprio, segurança avançada e suporte 24/7.</p>
+                    <p class="text-gray-600 mb-6">Soluções profissionais de e-mail com domínio próprio, segurança avançada e suporte técnico.</p>
                     <ul class="text-sm text-gray-600 mb-6 space-y-2">
                         <li>✓ Domínio personalizado</li>
                         <li>✓ Antispam e antivírus</li>
@@ -121,7 +122,7 @@
                     <p class="text-gray-600 mb-6">Terceirização completa de TI com equipe especializada para manter sua empresa sempre conectada.</p>
                     <ul class="text-sm text-gray-600 mb-6 space-y-2">
                         <li>✓ Suporte remoto e presencial</li>
-                        <li>✓ Monitoramento 24/7</li>
+                        <li>✓ Monitoramento</li>
                         <li>✓ Manutenção preventiva</li>
                         <li>✓ Gestão de infraestrutura</li>
                     </ul>
@@ -188,7 +189,7 @@
                             <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Suporte técnico 24/7
+                            Suporte técnico
                         </li>
                         <li class="flex items-center">
                             <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -224,7 +225,7 @@
                             <svg class="w-6 h-6 mr-4 text-jmv-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
-                            <span>contato@jmvtech.com.br</span>
+                            <span>contato@jmvtechnologies.com.br</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-6 h-6 mr-4 text-jmv-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -252,18 +253,18 @@
                 </div>
                 
                 <div class="bg-white p-8 rounded-lg">
-                    <form class="space-y-6">
+                    <form id="formContato" class="space-y-6">
                         <div>
                             <label class="block text-jmv-primary font-semibold mb-2">Nome</label>
-                            <input type="text" class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
+                            <input type="text" id="contatoNome" name="nome" required class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
                         </div>
                         <div>
                             <label class="block text-jmv-primary font-semibold mb-2">E-mail</label>
-                            <input type="email" class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
+                            <input type="email" id="contatoEmail" name="email" required class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
                         </div>
                         <div>
                             <label class="block text-jmv-primary font-semibold mb-2">Serviço de Interesse</label>
-                            <select class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
+                            <select id="contatoServico" name="servico" class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
                                 <option>E-mail Corporativo</option>
                                 <option>Outsourcing de TI</option>
                                 <option>Equipamentos</option>
@@ -272,7 +273,7 @@
                         </div>
                         <div>
                             <label class="block text-jmv-primary font-semibold mb-2">Mensagem</label>
-                            <textarea rows="4" class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent"></textarea>
+                            <textarea rows="4" id="contatoMensagem" name="mensagem" required class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-jmv-accent text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
                             Enviar Mensagem
@@ -282,6 +283,92 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal de Orçamento -->
+    <div id="modalOrcamento" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-jmv-primary">Solicitar Orçamento</h2>
+                    <button id="btnFecharModal" class="text-gray-500 hover:text-gray-700 text-2xl">
+                        &times;
+                    </button>
+                </div>
+                
+                <form id="formOrcamento" class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-jmv-primary font-semibold mb-2">Nome Completo *</label>
+                            <input type="text" id="orcamentoNome" name="nome" required class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-jmv-primary font-semibold mb-2">E-mail *</label>
+                            <input type="email" id="orcamentoEmail" name="email" required class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-jmv-primary font-semibold mb-2">Telefone</label>
+                            <input type="tel" id="orcamentoTelefone" name="telefone" class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-jmv-primary font-semibold mb-2">Empresa</label>
+                            <input type="text" id="orcamentoEmpresa" name="empresa" class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-jmv-primary font-semibold mb-2">Serviços de Interesse *</label>
+                        <div class="grid md:grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="servicos" value="E-mail Corporativo" class="mr-2 text-jmv-accent focus:ring-jmv-accent">
+                                E-mail Corporativo
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="servicos" value="Outsourcing de TI" class="mr-2 text-jmv-accent focus:ring-jmv-accent">
+                                Outsourcing de TI
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="servicos" value="Equipamentos" class="mr-2 text-jmv-accent focus:ring-jmv-accent">
+                                Equipamentos
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="servicos" value="Consultoria" class="mr-2 text-jmv-accent focus:ring-jmv-accent">
+                                Consultoria
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-jmv-primary font-semibold mb-2">Descrição do Projeto *</label>
+                        <textarea rows="4" id="orcamentoDescricao" name="descricao" required placeholder="Descreva suas necessidades, quantidade de usuários, prazo desejado, etc." class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-jmv-primary font-semibold mb-2">Orçamento Estimado</label>
+                        <select id="orcamentoOrcamento" name="orcamento" class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-jmv-accent focus:border-transparent">
+                            <option value="">Selecione uma faixa</option>
+                            <option value="Até R$ 1.000">Até R$ 1.000</option>
+                            <option value="R$ 1.000 - R$ 5.000">R$ 1.000 - R$ 5.000</option>
+                            <option value="R$ 5.000 - R$ 10.000">R$ 5.000 - R$ 10.000</option>
+                            <option value="R$ 10.000 - R$ 25.000">R$ 10.000 - R$ 25.000</option>
+                            <option value="Acima de R$ 25.000">Acima de R$ 25.000</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex gap-4 pt-4">
+                        <button type="button" id="btnCancelarOrcamento" class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-400 transition-colors">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="flex-1 bg-jmv-accent text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                            Enviar Solicitação
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-jmv-secondary text-white py-8">
@@ -299,6 +386,9 @@
     </footer>
 
     <script>
+        // Inicializar EmailJS
+        emailjs.init("Yx6BtRR7GUybUmwJY"); // Chave pública do EmailJS configurada
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -313,10 +403,114 @@
             });
         });
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Funcionalidade do modal de orçamento
+        const modalOrcamento = document.getElementById('modalOrcamento');
+        const btnSolicitarOrcamento = document.getElementById('btnSolicitarOrcamento');
+        const btnFecharModal = document.getElementById('btnFecharModal');
+        const btnCancelarOrcamento = document.getElementById('btnCancelarOrcamento');
+
+        // Abrir modal de orçamento
+        btnSolicitarOrcamento.addEventListener('click', function() {
+            modalOrcamento.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Fechar modal
+        function fecharModal() {
+            modalOrcamento.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        btnFecharModal.addEventListener('click', fecharModal);
+        btnCancelarOrcamento.addEventListener('click', fecharModal);
+
+        // Fechar modal ao clicar fora
+        modalOrcamento.addEventListener('click', function(e) {
+            if (e.target === modalOrcamento) {
+                fecharModal();
+            }
+        });
+
+        // Scroll para seção de serviços
+        document.getElementById('btnNossosServicos').addEventListener('click', function() {
+            document.getElementById('services').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+
+        // Função para enviar email
+        function enviarEmail(templateId, templateParams, tipoFormulario) {
+            return emailjs.send("service_jzdhyoy", templateId, templateParams)
+                .then(function(response) {
+                    console.log('Email enviado com sucesso!', response.status, response.text);
+                    if (tipoFormulario === 'orcamento') {
+                        alert('Solicitação de orçamento enviada com sucesso! Entraremos em contato em breve.');
+                        fecharModal();
+                        document.getElementById('formOrcamento').reset();
+                    } else {
+                        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                        document.getElementById('formContato').reset();
+                    }
+                }, function(error) {
+                    console.error('Erro ao enviar email:', error);
+                    alert('Erro ao enviar mensagem. Tente novamente ou entre em contato pelo WhatsApp.');
+                });
+        }
+
+        // Formulário de orçamento
+        document.getElementById('formOrcamento').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            
+            // Validar se pelo menos um serviço foi selecionado
+            const servicosSelecionados = Array.from(document.querySelectorAll('input[name="servicos"]:checked'))
+                .map(checkbox => checkbox.value);
+            
+            if (servicosSelecionados.length === 0) {
+                alert('Por favor, selecione pelo menos um serviço de interesse.');
+                return;
+            }
+
+            const templateParams = {
+                to_email: 'contato@jmvtechnologies.com.br',
+                subject: 'Solicitação de Orçamento - JMV Technologies',
+                nome: document.getElementById('orcamentoNome').value,
+                email: document.getElementById('orcamentoEmail').value,
+                telefone: document.getElementById('orcamentoTelefone').value || 'Não informado',
+                empresa: document.getElementById('orcamentoEmpresa').value || 'Não informado',
+                servicos: servicosSelecionados.join(', '),
+                descricao: document.getElementById('orcamentoDescricao').value,
+                orcamento: document.getElementById('orcamentoOrcamento').value || 'Não informado',
+                data_atual: new Date().toLocaleString('pt-BR'),
+                tipo: 'Solicitação de Orçamento'
+            };
+
+            enviarEmail("YOUR_TEMPLATE_ID_ORCAMENTO", templateParams, 'orcamento');
+        });
+
+        // Formulário de contato
+        document.getElementById('formContato').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const templateParams = {
+                to_email: 'contato@jmvtechnologies.com.br',
+                subject: 'Novo Contato - JMV Technologies',
+                nome: document.getElementById('contatoNome').value,
+                email: document.getElementById('contatoEmail').value,
+                servico: document.getElementById('contatoServico').value,
+                mensagem: document.getElementById('contatoMensagem').value,
+                data_atual: new Date().toLocaleString('pt-BR'),
+                tipo: 'Contato'
+            };
+
+            enviarEmail("template_x8trjae", templateParams, 'contato');
+        });
+
+        // Fechar modal com ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modalOrcamento.classList.contains('hidden')) {
+                fecharModal();
+            }
         });
     </script>
 </body>
