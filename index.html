@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JMV Technologies • Soluções Inteligentes em TI</title>
     <meta name="description" content="JMV Technologies: e-mail corporativo, outsourcing de TI e equipamentos. Soluções inteligentes com segurança, suporte e SLA." />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
     <link rel="canonical" href="https://www.jmvtechnologies.com.br/" />
+    <link rel="alternate" href="https://www.jmvtechnologies.com.br/" hreflang="pt-BR" />
     <meta property="og:title" content="JMV Technologies • Soluções Inteligentes em TI" />
     <meta property="og:description" content="E-mail corporativo, outsourcing de TI e equipamentos com suporte especializado e SLA." />
     <meta property="og:type" content="website" />
@@ -13,6 +16,7 @@
     <meta property="og:image" content="https://www.jmvtechnologies.com.br/assets/JMV%20TECHNOLOGIES%20MOCKUP%203.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JMV Technologies • Soluções Inteligentes em TI" />
     <meta name="twitter:description" content="Transforme sua empresa com nossas soluções completas em TI." />
@@ -131,7 +135,7 @@
                         <li>✓ Backup automático</li>
                         <li>✓ Suporte técnico</li>
                     </ul>
-                    <a href="./email-corporativo.html" target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center bg-jmv-accent text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold mt-auto">
+                    <a href="./email-corporativo.html" class="w-full inline-flex justify-center bg-jmv-accent text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold mt-auto">
                         Saiba Mais
                     </a>
                 </div>
@@ -151,7 +155,7 @@
                         <li>✓ Manutenção preventiva</li>
                         <li>✓ Gestão de infraestrutura</li>
                     </ul>
-                    <a href="./outsourcing-ti.html" target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center bg-jmv-accent text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold mt-auto">
+                    <a href="./outsourcing-ti.html" class="w-full inline-flex justify-center bg-jmv-accent text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold mt-auto">
                         Saiba Mais
                     </a>
                 </div>
@@ -171,7 +175,7 @@
                         <li>✓ Equipamentos de rede</li>
                         <li>✓ Periféricos e acessórios</li>
                     </ul>
-                    <a href="./equipamentos.html" target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center bg-jmv-accent text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold mt-auto">
+                    <a href="./equipamentos.html" class="w-full inline-flex justify-center bg-jmv-accent text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold mt-auto">
                         Saiba Mais
                     </a>
                 </div>
@@ -548,6 +552,33 @@
         </div>
     </div>
 
+    <!-- FAQ (SEO + LLM friendly) -->
+    <section id="faq" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-jmv-primary">Perguntas Frequentes</h2>
+            </div>
+            <div class="space-y-4 max-w-4xl mx-auto">
+                <details class="bg-white border rounded-lg p-4">
+                    <summary class="font-semibold text-jmv-primary cursor-pointer">Quais serviços a JMV Technologies oferece?</summary>
+                    <p class="mt-2 text-gray-700">E-mail corporativo com domínio próprio, outsourcing de TI (suporte remoto e presencial, monitoramento, SLA) e fornecimento/implantação de equipamentos (computadores, servidores, rede e periféricos).</p>
+                </details>
+                <details class="bg-white border rounded-lg p-4">
+                    <summary class="font-semibold text-jmv-primary cursor-pointer">Vocês fazem migração de contas de e-mail?</summary>
+                    <p class="mt-2 text-gray-700">Sim. Realizamos migração assistida com planejamento, janela de mudança e políticas de segurança e retenção, reduzindo ao máximo a indisponibilidade.</p>
+                </details>
+                <details class="bg-white border rounded-lg p-4">
+                    <summary class="font-semibold text-jmv-primary cursor-pointer">Como funciona o outsourcing de TI?</summary>
+                    <p class="mt-2 text-gray-700">Trabalhamos com contrato mensal por SLA, pacote de horas ou projeto fechado. Inclui suporte remoto/presencial, monitoramento, gestão de ativos, documentação e relatórios.</p>
+                </details>
+                <details class="bg-white border rounded-lg p-4">
+                    <summary class="font-semibold text-jmv-primary cursor-pointer">Atendem empresas fora de Curitiba?</summary>
+                    <p class="mt-2 text-gray-700">Sim. Atendemos todo o Brasil com suporte remoto e, quando necessário, visitas presenciais agendadas.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-jmv-secondary text-white py-8">
         <div class="max-w-7xl mx-auto px-4 text-center">
@@ -567,6 +598,36 @@
         </div>
     </footer>
 
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quais serviços a JMV Technologies oferece?",
+          "acceptedAnswer": {"@type": "Answer", "text": "E-mail corporativo com domínio próprio, outsourcing de TI (suporte remoto e presencial, monitoramento, SLA) e fornecimento/implantação de equipamentos (computadores, servidores, rede e periféricos)."}
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês fazem migração de contas de e-mail?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Sim. Realizamos migração assistida com planejamento, janela de mudança e políticas de segurança e retenção, reduzindo ao máximo a indisponibilidade."}
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o outsourcing de TI?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Trabalhamos com contrato mensal por SLA, pacote de horas ou projeto fechado. Inclui suporte remoto/presencial, monitoramento, gestão de ativos, documentação e relatórios."}
+        },
+        {
+          "@type": "Question",
+          "name": "Atendem empresas fora de Curitiba?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Sim. Atendemos todo o Brasil com suporte remoto e, quando necessário, visitas presenciais agendadas."}
+        }
+      ]
+    }
+    </script>
+
     <!-- Structured Data: Organization and Website -->
     <script type="application/ld+json">
     {
@@ -579,6 +640,16 @@
         "https://instagram.com/jmvtechnologies",
         "https://wa.me/5541996490727"
       ],
+      "description": "A JMV Technologies oferece soluções de TI: e-mail corporativo, outsourcing e fornecimento de equipamentos com suporte especializado e SLA.",
+      "foundingDate": "2018",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Curitiba",
+        "addressRegion": "PR",
+        "addressCountry": "BR"
+      },
+      "areaServed": "BR",
+      "knowsAbout": ["E-mail corporativo", "Outsourcing de TI", "Equipamentos de TI", "Segurança da informação", "Backup e retenção", "Redes e Wi‑Fi"] ,
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",
